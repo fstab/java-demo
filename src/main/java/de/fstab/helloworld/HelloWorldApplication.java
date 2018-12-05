@@ -21,19 +21,19 @@ public class HelloWorldApplication {
         String result = "ENVIRONMENT\n";
         result = result + "===========\n\n";
         for (var e : new TreeMap<>(System.getenv()).entrySet()) {
-            result = result + "| " + format(20, e.getKey()) + " | " + format(50, e.getValue()) + " |\n";
+            result = result + "| " + fixedLength(20, e.getKey()) + " | " + fixedLength(50, e.getValue()) + " |\n";
         }
         return result;
     }
 
-    private String format(int n, String s) {
+    private String fixedLength(int length, String s) {
         if (s == null) {
             s = "null";
         }
         s = s.replaceAll("\\s+", " "); // replace newlines and tabs with spaces
-        if (s.length() > n) {
-            s = s.substring(0, n - 3) + "..."; // truncate string
+        if (s.length() > length) {
+            s = s.substring(0, length - 3) + "..."; // truncate string
         }
-        return String.format("%-" + n + "s", s); // make n chars long, padded with spaces.
+        return String.format("%-" + length + "s", s); // make n chars long, padded with spaces.
     }
 }
