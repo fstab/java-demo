@@ -18,8 +18,9 @@ public class HelloWorldApplication {
 
     @GetMapping(value = "/", produces = MediaType.TEXT_PLAIN_VALUE)
     public String sayHello() {
-        String result = "ENVIRONMENT\n";
-        result = result + "===========\n\n";
+        String result = "";
+        result = result + "ENVIRONMENT\n";
+        result = result + "-----------\n\n";
         for (var e : new TreeMap<>(System.getenv()).entrySet()) {
             result = result + "| " + fixedLength(20, e.getKey()) + " | " + fixedLength(50, e.getValue()) + " |\n";
         }
