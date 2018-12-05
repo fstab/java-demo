@@ -1,6 +1,5 @@
 package de.fstab.helloworld;
 
-import java.net.UnknownHostException;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -19,7 +18,7 @@ public class HelloWorldApplication {
     }
 
     @GetMapping(value = "/", produces = MediaType.TEXT_PLAIN_VALUE)
-    public String sayHello() throws UnknownHostException {
+    public String sayHello() {
         String result = "ENVIRONMENT\n";
         result = result + "===========\n\n";
         for (Map.Entry<String, String> e : new TreeMap<>(System.getenv()).entrySet()) {
