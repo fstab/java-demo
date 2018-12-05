@@ -1,6 +1,5 @@
 package de.fstab.helloworld;
 
-import java.util.Map;
 import java.util.TreeMap;
 
 import org.springframework.boot.SpringApplication;
@@ -21,7 +20,7 @@ public class HelloWorldApplication {
     public String sayHello() {
         String result = "ENVIRONMENT\n";
         result = result + "===========\n\n";
-        for (Map.Entry<String, String> e : new TreeMap<>(System.getenv()).entrySet()) {
+        for (var e : new TreeMap<>(System.getenv()).entrySet()) {
             result = result + "| " + format(20, e.getKey()) + " | " + format(50, e.getValue()) + " |\n";
         }
         return result;
