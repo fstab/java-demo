@@ -28,20 +28,10 @@ Test locally:
 docker run -p8080:8080 --rm fstab/java-hello-world
 ```
 
-Kubernetes deployment descriptor:
+Deploy on Kubernetes
 
 ```yaml
-apiVersion: apps/v1
-kind: Deployment
-spec:
-  replicas: 2
-  template:
-    spec:
-      containers:
-      - image: fstab/java-hello-world
-        name: java-hello-world
-        ports:
-        - containerPort: 8080
+kubectl create -f java-hello-world-deployment.yaml
 ```
 
 Test
