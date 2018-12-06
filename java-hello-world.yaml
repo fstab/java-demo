@@ -17,3 +17,16 @@ spec:
         name: java-hello-world
         ports:
         - containerPort: 8080
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: java-hello-world
+spec:
+  selector:
+    app: java-hello-world
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+r

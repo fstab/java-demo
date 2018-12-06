@@ -31,10 +31,17 @@ docker run -p8080:8080 --rm fstab/java-hello-world
 Deploy on Kubernetes
 
 ```yaml
-kubectl create -f java-hello-world-deployment.yaml
+kubectl create -f java-hello-world.yaml
 ```
 
 Test
 ----
 
+Test locally:
+
 View [http://localhost:8080](http://localhost:8080).
+
+Test on Kubernetes:
+
+1. Get the service's cluster IP with `export HELLO_WORLD_SERVICE_IP=$(kubectl get service java-hello-world -o=jsonpath='{.spec.clusterIP}')`
+2. `curl $HELLO_WORLD_SERVICE_IP`
