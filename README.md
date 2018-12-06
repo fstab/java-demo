@@ -28,6 +28,8 @@ Option 2: Build using the Docker maven plugin:
 mvn package docker:build
 ```
 
+A pre-built Docker image is available on [fstab/java-hello-world](https://hub.docker.com/r/fstab/java-hello-world/).
+
 Run
 ---
 
@@ -42,6 +44,8 @@ Deploy on Kubernetes
 ```yaml
 kubectl create -f java-hello-world.yaml
 ```
+
+The yaml file references the Docker image [fstab/java-hello-world](https://hub.docker.com/r/fstab/java-hello-world/). If you create your own image, update the image location in the yaml file.
 
 Test
 ----
