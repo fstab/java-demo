@@ -15,7 +15,7 @@ This is useful for exploring the environment of a Kubernetes pod. For example, t
 Build
 -----
 
-Option 1: Build the Docker image explicitly:
+Option 1: Build the Docker image manually:
 
 ```sh
 mvn package
