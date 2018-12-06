@@ -45,7 +45,7 @@ Deploy on Kubernetes
 kubectl create -f java-demo.yaml
 ```
 
-The yaml file references the Docker image [fstab/java-demo](https://hub.docker.com/r/fstab/java-demo/). If you create your own image, update the image location in the yaml file.
+The deployment in `java-demo.yaml` references the Docker image [fstab/java-demo](https://hub.docker.com/r/fstab/java-demo/). If you create your own image, update the image location in `java-demo.yaml` accordingly.
 
 Test
 ----
