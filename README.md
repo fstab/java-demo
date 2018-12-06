@@ -1,12 +1,12 @@
 Java Hello World
 ================
 
-Java Demo App for Kubernetes.
+Java Demo Application for Kubernetes.
 
 Overview
 --------
 
-The demo app runs on HTTP port 8080, and provides the current system environment variables formatted as an ASCII table:
+The demo runs on HTTP port 8080, and provides the current system environment variables formatted as an ASCII table:
 
 ![Screen Shot](screenshot.png)
 
