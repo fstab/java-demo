@@ -20,7 +20,7 @@ public class HelloWorldApplication {
     public String sayHello() {
         String result = "";
         result = result + "ENVIRONMENT\n";
-        result = result + "-----------\n\n";
+        result = result + "-----------\n";
         for (var e : new TreeMap<>(System.getenv()).entrySet()) {
             // key length 30 so that KUBERNETES_SERVICE_PORT_HTTPS fits in
             // value length 42 so that the overall table fits in an 80 char terminal window
