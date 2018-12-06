@@ -1,7 +1,16 @@
 Java Hello World
 ================
 
-Demo Java application for Kubernetes
+Demo Java application for Kubernetes.
+
+Overview
+--------
+
+The demo application runs an HTTP service on port 8080, listing all environment variables:
+
+![Screen Shot](screenshot.png)
+
+This is useful for exploring the environment of the current Kubernetes pod. For example, the `HOSTNAME` variable contains the name of the pod serving the request.
 
 Build
 -----
