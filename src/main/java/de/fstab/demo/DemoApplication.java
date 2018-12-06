@@ -1,4 +1,4 @@
-package de.fstab.helloworld;
+package de.fstab.demo;
 
 import java.util.TreeMap;
 
@@ -10,14 +10,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class HelloWorldApplication {
+public class DemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HelloWorldApplication.class, args);
+        SpringApplication.run(DemoApplication.class, args);
     }
 
+    /**
+     * @return system environment variables, formatted as an ASCII table
+     */
     @GetMapping(value = "/", produces = MediaType.TEXT_PLAIN_VALUE)
-    public String sayHello() {
+    public String getEnvironment() {
         String result = "";
         result = result + "ENVIRONMENT\n";
         result = result + "-----------\n";
