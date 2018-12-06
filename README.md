@@ -43,5 +43,11 @@ View [http://localhost:8080](http://localhost:8080).
 
 Test on Kubernetes:
 
-1. Get the service's cluster IP with `export HELLO_WORLD_SERVICE_IP=$(kubectl get service java-hello-world -o=jsonpath='{.spec.clusterIP}')`
-2. `curl $HELLO_WORLD_SERVICE_IP`
+1.  Get the service's cluster IP:
+    ```bash
+    export HELLO_WORLD_SERVICE_IP=$(kubectl get service java-hello-world -o=jsonpath='{.spec.clusterIP}')
+    ```
+2.  Access the pods through the service's cluster IP:
+    ```bash
+    curl $HELLO_WORLD_SERVICE_IP
+    ```
