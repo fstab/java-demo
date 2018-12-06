@@ -19,7 +19,7 @@ Option 1: Build the Docker image explicitly:
 
 ```sh
 mvn package
-docker build -t fstab/java-demo-app .
+docker build -t fstab/java-demo .
 ```
 
 Option 2: Build using the Docker maven plugin:
@@ -28,7 +28,7 @@ Option 2: Build using the Docker maven plugin:
 mvn package docker:build
 ```
 
-A pre-built Docker image is available on [fstab/java-demo-app](https://hub.docker.com/r/fstab/java-demo-app/).
+A pre-built Docker image is available on [fstab/java-demo](https://hub.docker.com/r/fstab/java-demo/).
 
 Run
 ---
@@ -36,16 +36,16 @@ Run
 Test locally:
 
 ```sh
-docker run -p8080:8080 --rm fstab/java-demo-app
+docker run -p8080:8080 --rm fstab/java-demo
 ```
 
 Deploy on Kubernetes
 
 ```yaml
-kubectl create -f java-demo-app.yaml
+kubectl create -f java-demo.yaml
 ```
 
-The yaml file references the Docker image [fstab/java-demo-app](https://hub.docker.com/r/fstab/java-demo-app/). If you create your own image, update the image location in the yaml file.
+The yaml file references the Docker image [fstab/java-demo](https://hub.docker.com/r/fstab/java-demo/). If you create your own image, update the image location in the yaml file.
 
 Test
 ----
@@ -58,7 +58,7 @@ Test on Kubernetes:
 
 1.  Get the service's cluster IP:
     ```bash
-    export DEMO_SERVICE_IP=$(kubectl get service java-demo-app -o=jsonpath='{.spec.clusterIP}')
+    export DEMO_SERVICE_IP=$(kubectl get service java-demo -o=jsonpath='{.spec.clusterIP}')
     ```
 2.  Access the pods through the service's cluster IP:
     ```bash

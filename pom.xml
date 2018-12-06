@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.fstab</groupId>
-    <artifactId>java-demo-app</artifactId>
+    <artifactId>java-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>demo-app</name>
-    <description>Java Demo App for Kubernetes</description>
+    <name>demo</name>
+    <description>Java Demo Application for Kubernetes</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
