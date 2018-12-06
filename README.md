@@ -1,7 +1,7 @@
-Java Hello World
-================
+Java Demo Application
+=====================
 
-Java Demo Application for Kubernetes.
+Java Demo Application for [Kubernetes](https://kubernetes.io/).
 
 Overview
 --------
@@ -10,19 +10,19 @@ The demo runs on HTTP port 8080, and provides the current system environment var
 
 ![Screen Shot](screenshot.png)
 
-This is useful for exploring the environment of a Kubernetes pod. For example, the `HOSTNAME` variable tells which pod is serving the request.
+This is useful for exploring the environment of a Kubernetes [pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/). For example, the `HOSTNAME` variable tells which pod is serving the request.
 
 Build
 -----
 
-Option 1: Build the Docker image manually:
+**Option 1:** Build the Docker image manually:
 
 ```sh
 mvn package
 docker build -t fstab/java-demo .
 ```
 
-Option 2: Build using the Docker maven plugin:
+**Option 2:** Build using the [Docker maven plugin](https://dmp.fabric8.io/):
 
 ```sh
 mvn package docker:build
@@ -56,11 +56,11 @@ View [http://localhost:8080](http://localhost:8080).
 
 Test on Kubernetes:
 
-1.  Get the service's cluster IP:
+1.  Get the service's [Cluster IP](https://kubernetes.io/docs/concepts/services-networking/service/):
     ```bash
     export DEMO_SERVICE_IP=$(kubectl get service java-demo -o=jsonpath='{.spec.clusterIP}')
     ```
-2.  Access the pods through the service's cluster IP:
+2.  Access the pods through the service's Cluster IP:
     ```bash
     curl $DEMO_SERVICE_IP
     ```
