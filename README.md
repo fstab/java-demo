@@ -15,6 +15,8 @@ This is useful for exploring the environment of a Kubernetes [pod](https://kuber
 Build
 -----
 
+This demo requires Java 11.
+
 **Option 1:** Build the Docker image manually:
 
 ```sh
@@ -64,3 +66,8 @@ Test on Kubernetes:
     ```bash
     curl $DEMO_SERVICE_IP
     ```
+
+Notes
+-----
+
+You see a compile error in Intellij Idea? Me too, filed this bug report [https://youtrack.jetbrains.com/issue/IDEA-203791](https://youtrack.jetbrains.com/issue/IDEA-203791).
