@@ -12,6 +12,22 @@ The demo runs on HTTP port 8080, and provides the current system environment var
 
 This is useful for exploring the environment of a Kubernetes [pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/). For example, the `HOSTNAME` variable tells which pod is serving the request.
 
+Run
+---
+
+A pre-built Docker image is available on [fstab/java-demo](https://hub.docker.com/r/fstab/java-demo/). Test locally:
+
+```sh
+docker run -p8080:8080 --rm fstab/java-demo
+```
+
+Deploy on Kubernetes
+
+```yaml
+curl -LO https://raw.githubusercontent.com/fstab/java-demo/master/java-demo.yaml
+kubectl create -f java-demo.yaml
+```
+
 Build
 -----
 
@@ -29,25 +45,6 @@ docker build -t fstab/java-demo .
 ```sh
 mvn package docker:build
 ```
-
-A pre-built Docker image is available on [fstab/java-demo](https://hub.docker.com/r/fstab/java-demo/).
-
-Run
----
-
-Test locally:
-
-```sh
-docker run -p8080:8080 --rm fstab/java-demo
-```
-
-Deploy on Kubernetes
-
-```yaml
-kubectl create -f java-demo.yaml
-```
-
-The deployment in `java-demo.yaml` references the Docker image [fstab/java-demo](https://hub.docker.com/r/fstab/java-demo/). If you create your own image, update the image location in `java-demo.yaml` accordingly.
 
 Test
 ----
